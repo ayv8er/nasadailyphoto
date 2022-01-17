@@ -6,4 +6,4 @@ A React SPA that consumes and displays a 3rd party API (https://api.nasa.gov/#ap
 
 ## Contributions
 
-On initial render, the photo of the day is of today's current date. Programmed a function to insert an optional query param ('date') into the endpoint and fetch as selected from the calendar input. CSS mainly in styled-components, but Bootstrap/Reactstrap was used to complete the collapsible toggle picture feature.
+On initial render, the photo of the day is of today's current date. Programmed a function to insert an optional query param ('date') into the endpoint and fetch as selected from the calendar input. Reactstrap for app layout and design components.
