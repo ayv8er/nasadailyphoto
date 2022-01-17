@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL, API_KEY } from "../constants/index";
-import "../App.css";
+import { Container } from "reactstrap";
 import Photo from "./Photo";
-import Explanation from "./Explanation";
 import Header from "./Header";
 import Calendar from "./Calendar";
 
@@ -38,23 +37,17 @@ function App() {
   };
 
   return (
-    <>
-      <div className="App">
-        {error && <h1>{error}</h1>}
-        <Header
-          copyright={data.copyright}
-          date={data.date}
-          title={data.title}
-        />
-      </div>
-      <div className="App">
-        <Calendar dateSelect={dateSelect} />
-      </div>
-      <div className="App">{<Photo photo={data.url} />}</div>
-      <div className="App">
-        {<Explanation explanation={data.explanation} />}
-      </div>
-    </>
+    <Container fluid>
+      {error && <h1>{error}</h1>}
+      <Header />
+      <Calendar dateSelect={dateSelect} />
+      <Photo
+        explanation={data.explanation}
+        photo={data.url}
+        title={data.title}
+        copyright={data.copyright}
+      />
+    </Container>
   );
 }
 
